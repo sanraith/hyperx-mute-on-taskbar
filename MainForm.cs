@@ -45,7 +45,7 @@ namespace HyperXMuteTaskbar
             taskbarIcon.Icon = isMuted ? Resources.MicMuted : Resources.MicActive;
         }
 
-        private void TaskbarIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ExitMenuItem_Click(object sender, System.EventArgs e)
         {
             Close();
         }
