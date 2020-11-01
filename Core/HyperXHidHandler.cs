@@ -11,6 +11,8 @@ namespace HyperXMuteTaskbar.Core
 {
     internal sealed class HyperXHidHandler : IDisposable
     {
+        public IReadOnlyList<Device> RegisteredDevices => myRegisteredDevices;
+        
         public event EventHandler<bool> MicMuteChanged;
 
         public HyperXHidHandler(IntPtr windowHandle)
@@ -28,6 +30,8 @@ namespace HyperXMuteTaskbar.Core
             DisposeHandlers();
 
             var devices = GetHyperXDevices();
+            myRegisteredDevices.Clear();
+            myRegisteredDevices.AddRange(devices.Values);
             if (devices.Count == 0)
             {
                 //No device to register for, nothing to do here
@@ -118,6 +122,7 @@ namespace HyperXMuteTaskbar.Core
         private static string ConvertBytesToString(byte[] bytes) => string.Join(" ", bytes.Select(x => $"{x:x2}").ToList());
 
         private Handler myHidHandler;
+        private readonly List<Device> myRegisteredDevices = new List<Device>();
         private readonly IntPtr myWindowHandle;
     }
 }

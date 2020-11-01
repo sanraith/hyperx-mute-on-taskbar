@@ -1,7 +1,10 @@
 ﻿using HyperXMuteTaskbar.Core;
 using HyperXMuteTaskbar.Properties;
 using SharpLib.Win32;
+using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HyperXMuteTaskbar
@@ -12,9 +15,11 @@ namespace HyperXMuteTaskbar
         {
             InitializeComponent();
             Visible = false;
+            taskbarIcon.Icon = Resources.MicUnknown;
+
             myHidHandler = new HyperXHidHandler(Handle);
             myHidHandler.MicMuteChanged += MyHidHandler_MicMuteChanged;
-            myHidHandler.RegisterDevices();
+            _ = RegisterHidHandlerDevicesAsync();
         }
 
         /// <summary>
@@ -39,6 +44,28 @@ namespace HyperXMuteTaskbar
             base.SetVisibleCore(Visible);
         }
 
+        private async Task RegisterHidHandlerDevicesAsync()
+        {
+            BeginInvoke(new InvokeDelegate(() =>
+            {
+                registerDevicesMenuItem.Enabled = false;
+                deviceCountToolStripMenuItem.Text = $"Looking for Connected devices...";
+            }));
+
+            myHidHandler.RegisterDevices();
+            while (!myHidHandler.RegisteredDevices.Any())
+            {
+                await Task.Delay(TimeSpan.FromSeconds(5));
+                myHidHandler.RegisterDevices();
+            }
+
+            BeginInvoke(new InvokeDelegate(() =>
+            {
+                registerDevicesMenuItem.Enabled = true;
+                deviceCountToolStripMenuItem.Text = $"Connected devices: {myHidHandler.RegisteredDevices.Count}";
+            }));
+        }
+
         private void MyHidHandler_MicMuteChanged(object sender, bool isMuted)
         {
             Debug.WriteLine($"Mic is {(isMuted ? "muted" : "unmuted")}.");
@@ -50,6 +77,12 @@ namespace HyperXMuteTaskbar
             Close();
         }
 
+        private void RegisterDevicesMenuItem_Click(object sender, EventArgs e)
+        {
+            _ = RegisterHidHandlerDevicesAsync();
+        }
+
+        private delegate void InvokeDelegate();
         private readonly HyperXHidHandler myHidHandler;
     }
 }

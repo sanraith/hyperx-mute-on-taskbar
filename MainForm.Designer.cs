@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.taskbarIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.taskbarContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deviceCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerDevicesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taskbarContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -46,14 +48,31 @@
             // taskbarContextMenuStrip
             // 
             this.taskbarContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deviceCountToolStripMenuItem,
+            this.registerDevicesMenuItem,
             this.exitToolStripMenuItem});
             this.taskbarContextMenuStrip.Name = "taskbarContextMenuStrip";
-            this.taskbarContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.taskbarContextMenuStrip.ShowImageMargin = false;
+            this.taskbarContextMenuStrip.Size = new System.Drawing.Size(161, 70);
+            // 
+            // deviceCountToolStripMenuItem
+            // 
+            this.deviceCountToolStripMenuItem.Enabled = false;
+            this.deviceCountToolStripMenuItem.Name = "deviceCountToolStripMenuItem";
+            this.deviceCountToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.deviceCountToolStripMenuItem.Text = ".";
+            // 
+            // registerDevicesMenuItem
+            // 
+            this.registerDevicesMenuItem.Name = "registerDevicesMenuItem";
+            this.registerDevicesMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.registerDevicesMenuItem.Text = "Look for new devices";
+            this.registerDevicesMenuItem.Click += new System.EventHandler(this.RegisterDevicesMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -74,6 +93,8 @@
         private System.Windows.Forms.NotifyIcon taskbarIcon;
         private System.Windows.Forms.ContextMenuStrip taskbarContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerDevicesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviceCountToolStripMenuItem;
     }
 }
 
