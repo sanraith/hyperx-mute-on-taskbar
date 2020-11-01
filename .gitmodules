@@ -1,0 +1,3 @@
+[submodule "SharpLibHid"]
+	path = SharpLibHid
+	url = https://github.com/sanraith/SharpLibHid
