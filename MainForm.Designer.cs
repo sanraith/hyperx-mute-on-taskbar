@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.taskbarIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
+            // 
+            // taskbarIcon
+            // 
+            this.taskbarIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("taskbarIcon.Icon")));
+            this.taskbarIcon.Text = "HyperX mute on taskbar";
+            this.taskbarIcon.Visible = true;
+            this.taskbarIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TaskbarIcon_MouseDoubleClick);
             // 
             // MainForm
             // 
@@ -42,6 +52,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon taskbarIcon;
     }
 }
 
