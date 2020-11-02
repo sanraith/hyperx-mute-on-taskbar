@@ -94,7 +94,7 @@ namespace HyperXMuteTaskbar.Core
             foreach (TreeNode node in treeViewDevices.Nodes)
             {
                 Device device = (Device)node.Tag;
-                if (device != null && device.Product.Contains("HyperX"))
+                if (device?.Product?.Contains("HyperX") ?? false)
                 {
                     if (devices.ContainsKey(device.UsageId))
                     {
