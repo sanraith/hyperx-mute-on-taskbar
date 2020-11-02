@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MicActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MicActive.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FancyMicActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FancyMicActive.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MicMuted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MicMuted.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FancyMicMute" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FancyMicMute.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MicUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MicUnknown.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FancyMicUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FancyMicUnknown.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

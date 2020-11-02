@@ -15,7 +15,7 @@ namespace HyperXMuteTaskbar
         {
             InitializeComponent();
             Visible = false;
-            taskbarIcon.Icon = Resources.MicUnknown;
+            taskbarIcon.Icon = Resources.FancyMicUnknown;
 
             myHidHandler = new HyperXHidHandler(Handle);
             myHidHandler.MicMuteChanged += MyHidHandler_MicMuteChanged;
@@ -69,7 +69,7 @@ namespace HyperXMuteTaskbar
         private void MyHidHandler_MicMuteChanged(object sender, bool isMuted)
         {
             Debug.WriteLine($"Mic is {(isMuted ? "muted" : "unmuted")}.");
-            taskbarIcon.Icon = isMuted ? Resources.MicMuted : Resources.MicActive;
+            taskbarIcon.Icon = isMuted ? Resources.FancyMicMute : Resources.FancyMicActive;
         }
 
         private void ExitMenuItem_Click(object sender, System.EventArgs e)

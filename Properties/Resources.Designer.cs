@@ -63,9 +63,9 @@ namespace HyperXMuteTaskbar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon MicActive {
+        internal static System.Drawing.Icon FancyMicActive {
             get {
-                object obj = ResourceManager.GetObject("MicActive", resourceCulture);
+                object obj = ResourceManager.GetObject("FancyMicActive", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace HyperXMuteTaskbar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon MicMuted {
+        internal static System.Drawing.Icon FancyMicMute {
             get {
-                object obj = ResourceManager.GetObject("MicMuted", resourceCulture);
+                object obj = ResourceManager.GetObject("FancyMicMute", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace HyperXMuteTaskbar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon MicUnknown {
+        internal static System.Drawing.Icon FancyMicUnknown {
             get {
-                object obj = ResourceManager.GetObject("MicUnknown", resourceCulture);
+                object obj = ResourceManager.GetObject("FancyMicUnknown", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
