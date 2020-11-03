@@ -12,7 +12,7 @@ namespace HyperXMuteTaskbar.Core
     internal sealed class HyperXHidHandler : IDisposable
     {
         public IReadOnlyList<Device> RegisteredDevices => myRegisteredDevices;
-        
+
         public event EventHandler<bool> MicMuteChanged;
 
         public HyperXHidHandler(IntPtr windowHandle)
@@ -94,7 +94,7 @@ namespace HyperXMuteTaskbar.Core
             foreach (TreeNode node in treeViewDevices.Nodes)
             {
                 Device device = (Device)node.Tag;
-                if (device?.Product?.Contains("HyperX") ?? false)
+                if (IsHyperXMuteInputDevice(device))
                 {
                     if (devices.ContainsKey(device.UsageId))
                     {
@@ -108,6 +108,13 @@ namespace HyperXMuteTaskbar.Core
             }
 
             return devices;
+        }
+
+        private static bool IsHyperXMuteInputDevice(Device device)
+        {
+            return device != null && device.Product != null
+                && device.Product.Contains("HyperX")
+                && device.UsagePage == 0xFFC0 && device.UsageCollection == 0x0001;
         }
 
         private static bool IsMuteReport(Event hidEvent)

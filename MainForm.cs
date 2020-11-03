@@ -62,7 +62,7 @@ namespace HyperXMuteTaskbar
             BeginInvoke(new InvokeDelegate(() =>
             {
                 registerDevicesMenuItem.Enabled = true;
-                deviceCountToolStripMenuItem.Text = $"Connected devices: {myHidHandler.RegisteredDevices.Count}";
+                deviceCountToolStripMenuItem.Text = $"Connected: {string.Join(", ", myHidHandler.RegisteredDevices.Select(x => x.Product))}";
             }));
         }
 
