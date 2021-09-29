@@ -34,6 +34,7 @@
             this.taskbarContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deviceCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerDevicesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keepHeadsetAwakeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taskbarContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -50,29 +51,41 @@
             this.taskbarContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deviceCountToolStripMenuItem,
             this.registerDevicesMenuItem,
+            this.keepHeadsetAwakeMenuItem,
             this.exitToolStripMenuItem});
             this.taskbarContextMenuStrip.Name = "taskbarContextMenuStrip";
+            this.taskbarContextMenuStrip.ShowCheckMargin = true;
             this.taskbarContextMenuStrip.ShowImageMargin = false;
-            this.taskbarContextMenuStrip.Size = new System.Drawing.Size(161, 70);
+            this.taskbarContextMenuStrip.Size = new System.Drawing.Size(186, 114);
             // 
             // deviceCountToolStripMenuItem
             // 
             this.deviceCountToolStripMenuItem.Enabled = false;
             this.deviceCountToolStripMenuItem.Name = "deviceCountToolStripMenuItem";
-            this.deviceCountToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.deviceCountToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.deviceCountToolStripMenuItem.Text = ".";
             // 
             // registerDevicesMenuItem
             // 
             this.registerDevicesMenuItem.Name = "registerDevicesMenuItem";
-            this.registerDevicesMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.registerDevicesMenuItem.Size = new System.Drawing.Size(185, 22);
             this.registerDevicesMenuItem.Text = "Look for new devices";
             this.registerDevicesMenuItem.Click += new System.EventHandler(this.RegisterDevicesMenuItem_Click);
+            // 
+            // keepHeadsetAwakeMenuItem
+            // 
+            this.keepHeadsetAwakeMenuItem.Checked = true;
+            this.keepHeadsetAwakeMenuItem.CheckOnClick = true;
+            this.keepHeadsetAwakeMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.keepHeadsetAwakeMenuItem.Name = "keepHeadsetAwakeMenuItem";
+            this.keepHeadsetAwakeMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.keepHeadsetAwakeMenuItem.Text = "Keep headset awake";
+            this.keepHeadsetAwakeMenuItem.CheckedChanged += new System.EventHandler(this.KeepHeadsetAwakeMenuItem_CheckedChanged);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -95,6 +108,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerDevicesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deviceCountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keepHeadsetAwakeMenuItem;
     }
 }
 

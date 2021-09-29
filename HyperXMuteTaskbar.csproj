@@ -74,6 +74,7 @@
       <HintPath>SharpLibHid\Project\bin\x86\Release\SharpLibWin32.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,6 +87,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BeepConfig.cs" />
+    <Compile Include="Core\Beeper.cs" />
     <Compile Include="Core\HyperXHidHandler.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

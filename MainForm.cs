@@ -20,6 +20,9 @@ namespace HyperXMuteTaskbar
             myHidHandler = new HyperXHidHandler(Handle);
             myHidHandler.MicMuteChanged += MyHidHandler_MicMuteChanged;
             _ = RegisterHidHandlerDevicesAsync();
+
+            myBeeper = new Beeper();
+            keepHeadsetAwakeMenuItem.Checked = myBeeper.IsTurnedOn;
         }
 
         /// <summary>
@@ -82,7 +85,20 @@ namespace HyperXMuteTaskbar
             _ = RegisterHidHandlerDevicesAsync();
         }
 
+        private void KeepHeadsetAwakeMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (keepHeadsetAwakeMenuItem.Checked)
+            {
+                myBeeper.TurnOn();
+            }
+            else
+            {
+                myBeeper.TurnOff();
+            }
+        }
+
         private delegate void InvokeDelegate();
         private readonly HyperXHidHandler myHidHandler;
+        private readonly Beeper myBeeper;
     }
 }
